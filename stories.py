@@ -26,9 +26,9 @@ class Story:
 
     def generate(self, answers):
         """Substitute answers into text."""
-
+        #  answer is an object with key: word-type value: word
         text = self.template
-
+        # converting the template(aka text) into Jinja 
         for (key, val) in answers.items():
             text = text.replace("{" + key + "}", val)
 
