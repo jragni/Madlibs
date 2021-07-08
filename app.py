@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
 
-from stories import Story, silly_story, excited_story
+from stories import STORIES
 
-STORIES = {"silly": silly_story, "excited": excited_story}
+
 
 
 app = Flask(__name__)
@@ -23,9 +23,9 @@ def questions():
     prompts = STORIES[story_choice].prompts
     return render_template('questions.html',prompts=prompts,story_choice=story_choice)
 
-@app.route('/results')
-def result():
+@app.route('/<story_choice>/results')
+def result(story_choice):
     """Renders story page with words from forms filled"""
-    story_choice = request.args["story_choice"]
+    # story_choice = request.args["story_choice"]
     return render_template('story.html',story=STORIES[story_choice].generate(request.args))
 

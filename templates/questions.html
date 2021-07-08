@@ -6,20 +6,12 @@
 
   <h1 class="pt-4 mb-3 text-center">Madlibs!</h1>
 
-  <form action="/results" class="pb-4">
-    <div class="form-group row">
-      
-      <div class="col-7">
-        <input
+  <form action="/{{ story_choice }}/results" class="pb-4">
+        <!-- <input
             name ="story_choice"
             value = "{{ story_choice }}"
-            required
-            aria-label="{{ story_choice }}"
-            class="form-control"
-            type="hidden">
-      </div>
+            type="hidden"> -->
 
-  </div>
   <!-- Creates a label and input box for each prompt -->
   {% for prompt in prompts %}
     <div class="form-group row">
