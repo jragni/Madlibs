@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Choose Your Story {% endblock %}
+
+{% block content %}
+
+<!-- Creates dropdown box for users to choose story -->
+<form action="/questions" class="pb-4">
+
+  <select name = "story" class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Stories
+    <span class="caret"></span></button>
+      <option value="silly">Silly Story</option>
+      <option value="excited">Excited Story</option>
+  </select>
+  <button class="btn btn-primary btn-lg w-100">
+    Choose My Story!
+  </button>
+</form>
+
+{% endblock %}
